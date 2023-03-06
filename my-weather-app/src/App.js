@@ -1,4 +1,4 @@
-import React,{useContext} from "react"
+import React,{useContext,useState} from "react"
 import WeatherScreen from "./components/WeatherScreen";
 import { Context } from "./Context";
 
