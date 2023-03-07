@@ -1,7 +1,7 @@
 import React,{useContext,useState} from "react";
 import { Context } from "../Context";
 
-export default function WeatherScreen(){
+ function WeatherScreen(){
   const {city,setCity,weatherData,ready,setReady,toggleReady,location} = useContext(Context)
 
   
@@ -32,3 +32,4 @@ export default function WeatherScreen(){
     
   )
 }
+export default React.memo(WeatherScreen)

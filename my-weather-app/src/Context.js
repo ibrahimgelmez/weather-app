@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 
 export const Context = React.createContext(null)
 
-export default function ContextProvider({children}){
+function ContextProvider({children}){
   const [city,setCity] = useState({cityName:""})
   const [location,setLocation] = useState({name:"",lat:"",lon:""})
   const [weatherData,setWeatherData] = useState("")
@@ -48,3 +48,4 @@ export default function ContextProvider({children}){
     </Context.Provider>
   )
 }
+export default React.memo(ContextProvider)

@@ -1,19 +1,25 @@
 import React,{useContext,useState} from "react"
 import { Context } from "../Context"
 
-export default function WeatherDisplayCart(){
+function WeatherDisplayCart(){
   const {city,weatherData,location,iconUrl} = useContext(Context)
 
   const [hour,setHour] = useState(new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}))
-  const condition = weatherData && weatherData.cod !== '400' ? <h1>{(weatherData.main.temp - 273.15).toFixed(2)} °C</h1>:<h2>Hello</h2> 
+  const condition = weatherData && weatherData.cod !== '400' ? <h1 className="weather--temp">{(weatherData.main.temp - 273.15).toFixed(2)} °C</h1>:<h2>Hello</h2> 
   return(
     <>
       <div className="display-cart">
-          { location.name &&  <h2>{location.name}</h2>}
-          { location.name && <p>{hour}</p>}
+        <div className="city-time-data">
+          { location.name &&  <p className="city">{location.name}</p>}
+          { location.name && <p className="time">{hour}</p>}
+        </div>
+        <div className="temp-icon-data">
           { location.name && condition}
-          {location.name && <img src={`http://openweathermap.org/img/wn/${iconUrl}.png`}></img>}
+          {location.name && <img className="weather--icon" src={`http://openweathermap.org/img/wn/${iconUrl}@2x.png`}></img>}
+        </div>
       </div>
     </>
   )
 }
+
+export default React.memo(WeatherDisplayCart)
