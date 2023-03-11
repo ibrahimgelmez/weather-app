@@ -1,8 +1,8 @@
-import React,{useContext,useState} from "react";
+import React,{useContext} from "react";
 import { Context } from "../Context";
 
  function WeatherScreen(){
-  const {city,setCity,weatherData,ready,setReady,toggleReady,location} = useContext(Context)
+  const {city,setCity,toggleReady} = useContext(Context)
 
   
   function handleChange(e){

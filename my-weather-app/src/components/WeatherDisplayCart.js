@@ -8,7 +8,7 @@ function WeatherDisplayCart(){
   const condition = weatherData && weatherData.cod !== '400' ? <h1 className="weather--temp">{(weatherData.main.temp - 273.15).toFixed(2)} °C</h1>:<h2>Hello</h2> 
   return(
     <>
-      <div className="display-cart">
+      {location.name && <div className="display-cart">
         <div className="city-time-data">
           { location.name &&  <p className="city">{location.name}</p>}
           { location.name && <p className="time">{hour}</p>}
@@ -17,7 +17,7 @@ function WeatherDisplayCart(){
           { location.name && condition}
           {location.name && <img className="weather--icon" src={`http://openweathermap.org/img/wn/${iconUrl}@2x.png`}></img>}
         </div>
-      </div>
+      </div>}
     </>
   )
 }
