@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+
+
 body{
   text-align: center;
   margin: 0;
@@ -5,13 +9,14 @@ body{
   align-items: center;
   justify-content: center;
   background-color: aliceblue;
-  background-image: url(../src/imgs/clouds.jpg);
+  background-image: url(../src/imgs/cartbg.jpg);
   background-size: 100%;
 }
 .display-cart{
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #0FC2C0, #0CABA8);
+  background-image: url(../src/imgs/bluebg.jpg);
+  background-size: 100%;
   margin: 0;
   margin-top: 30px;
   border: none;
@@ -34,6 +39,7 @@ body{
   color: rgb(125, 125, 125);
   font-weight: 500;
   letter-spacing: 4px;
+  /* -webkit-text-stroke: 1px blue; */
 
 }
 .time{
@@ -54,10 +60,6 @@ body{
   padding-left: 270px;
   font-size: 100px;
 }
-.weather--icon{
-  width: 120px;
-  height: 120px;
-  padding-left: 30px;
-  
-  
-}
+
+
+@tailwind utilities;
